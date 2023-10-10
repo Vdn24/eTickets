@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220811165441_Initial.cs" />
+    <Compile Remove="Migrations\20220811165441_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20221124195335_Order_And_OrderItem_Added.cs" />
+    <Compile Remove="Migrations\20221124195335_Order_And_OrderItem_Added.Designer.cs" />
+    <Compile Remove="Migrations\20221124201547_Order_OrderItem_Added.cs" />
+    <Compile Remove="Migrations\20221124201547_Order_OrderItem_Added.Designer.cs" />
+    <Compile Remove="Migrations\20221125191519_Order_And_OrderItem_Added.cs" />
+    <Compile Remove="Migrations\20221125191519_Order_And_OrderItem_Added.Designer.cs" />
+    <Compile Remove="Migrations\20221125192719_Order_And_OrderItem_Added.cs" />
+    <Compile Remove="Migrations\20221125192719_Order_And_OrderItem_Added.Designer.cs" />
+    <Compile Remove="Migrations\20221125193417_Order_OrderItem_Added.cs" />
+    <Compile Remove="Migrations\20221125193417_Order_OrderItem_Added.Designer.cs" />
+    <Compile Remove="Migrations\20221125194210_Order_OrderItem_Added.cs" />
+    <Compile Remove="Migrations\20221125194210_Order_OrderItem_Added.Designer.cs" />
+    <Compile Remove="Migrations\20221125194533_Order_OrderItem_Added.cs" />
+    <Compile Remove="Migrations\20221125194533_Order_OrderItem_Added.Designer.cs" />
+    <Compile Remove="Migrations\20221217103704_Orders_And_OrderItem.cs" />
+    <Compile Remove="Migrations\20221217103704_Orders_And_OrderItem.Designer.cs" />
+    <Compile Remove="Migrations\20230101210948_Identity_Added.cs" />
+    <Compile Remove="Migrations\20230101210948_Identity_Added.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+	<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0">
+		
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
