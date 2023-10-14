@@ -26,37 +26,37 @@
                         <div class="card-body">
                             <p class="card-text">@Model.Description</p>
                             <p class="card d-block text">
-                                <b>Cinema: </b>
+                                <b>Кинотеатр: </b>
                                 <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
                                     @Model.Cinema.Name
                                 </a>
                             </p>
                             <p class="card d-block text">
-                                <b>Producer: </b>
+                                <b>Продюсер: </b>
                                 <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
                                     @Model.Producer.FullName
                                 </a>
                             </p>
-                            <p class="card-text"><b>Category: </b>@Model.MovieCategory</p>
-                            <p class="card-text"><b>Start Date: </b>@Model.StartDate.ToString("dd MMM yy")</p>
-                            <p class="card-text"><b>End Date: </b>@Model.EndDate.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Категория: </b>@Model.MovieCategory</p>
+                            <p class="card-text"><b>Дата начала: </b>@Model.StartDate.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Дата окончания: </b>@Model.EndDate.ToString("dd MMM yy")</p>
                             <p class="card-text ">
-                                <b>Status: </b>
+                                <b>Статус: </b>
                                 @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
                                 {
-                                    <span class="badge bg-success text-white">AVAILABLE</span>
+                                    <span class="badge bg-success text-white">Доступный</span>
                                 }
                                 else if (DateTime.Now > Model.EndDate)
                                 {
-                                    <span class="badge bg-danger text-white">EXPIRED</span>
+                                    <span class="badge bg-danger text-white">Истекший</span>
                                 }
                                 else
                                 {
-                                    <span class="badge bg-primary text-white">UPCOMING</span>
+                                    <span class="badge bg-primary text-white">Предстоящий</span>
                                 }
                             </p>
                             <p class="card-text">
-                                <b>Actors: </b>
+                                <b>Актеры: </b>
                                 <hr/>
                                 <div class="row">
                                     @foreach(var actor in Model.Actors_Movies)
@@ -76,13 +76,13 @@
                         <div class="card-footer ">
                             <p class="card-text">
                                 <a class="btn btn-outline-primary float-right" asp-action="Index" >
-                                    Back to List
+                                    Вернуться к списку
                                 </a>
                                 <a class="btn btn-success text-white @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
                                    asp-controller="Orders"
                                    asp-action="AddItemToShoppingCart"
                                    asp-route-id="@Model.Id">
-                                    <i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))
+                                    <i class="bi bi-cart-plus"></i> Добавить в корзину (Price @Model.Price.ToString("c"))
                                 </a>
                             </p>
                         </div>

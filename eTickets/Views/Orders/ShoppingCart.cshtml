@@ -8,16 +8,16 @@
 <div class="row">
     <div class="col-md-8 offset-2">
         <div class="text-center">
-            <h2>You shopping cart summary</h2>
+            <h2>Краткое описание вашей корзины покупок</h2>
         </div>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Selected amount</th>
-                    <th>Movie</th>
-                    <th>Price</th>
-                    <th>Subtotal</th>
+                    <th>Количество</th>
+                    <th>Фильм</th>
+                    <th>Цена</th>
+                    <th>Промежуточный итог</th>
                     <th></th>
                 </tr>
             </thead>
@@ -46,7 +46,7 @@
             <tfoot>
                 <tr>
                     <td colspan="2"></td>
-                    <td><b>Total:</b></td>
+                    <td><b>Итог:</b></td>
                     <td>
                         @Model.ShoppingCartTotal.ToString("c")
                     </td>
@@ -54,61 +54,27 @@
                 </tr>
             </tfoot>
         </table>
-
-        <div class="text-right">
+        <div class="row">
+            <span style="padding:5px"></span>
+        <div class="text-left">
             <div class="btn-group">
                 @*<a class="btn btn-outline-primary" asp-action="CompleteOrder">
                         Complete order
                     </a>*@
                 <div id="paypal-btn"></div>
-                <span style="padding:5px"></span>
+                
                 <a class="btn btn-outline-success" asp-controller="Movies" asp-action="Index">
-                    Add more items
+                    Добавьте больше элементов
                 </a>
             </div>
         </div>
+        <div class="text-right">
+            <a class="btn btn-outline-primary" asp-action="CompleteOrder">
+                Оформить заказ
+            </a>
 
+        </div>
+        </div>
     </div>
 </div>
 
-@section Scripts{
-
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
-    <script>
-        let _total = @Html.Raw(Model.ShoppingCartTotal);
-        paypal.Button.render({
-            //Configure environment
-            env: 'sandbox',
-            client: {
-                sandbox: 'AcKRtgL4i68EZ2ZYuYUx3ilihAg2YhL5dtF_m19A8MjBWVOn6ewNS4M_uV8gA3xi98zTcUq38gUHbVFx'
-            },
-            //Customize button
-            locale: 'en_US',
-            style: {
-                size: 'small',
-                color: 'gold',
-                shape: 'pill'
-            },
-            commit: true,
-            //Set up a payment
-            payment: function (data, actions) {
-                return actions.payment.create({
-                    transactions: [{
-                        amount: {
-                            total: _total,
-                            currency: 'USD'
-                        }
-                    }]
-                });
-            },
-            //Execute the payment
-            onAuthorize: function (data, actions) {
-                return actions.payment.execute().then(function () {
-                    var url = '@Url.Action("CompleteOrder", "Orders", new { })';
-                    window.location.href = url;
-                });
-            }
-        }, '#paypal-btn')
-    </script>
-}

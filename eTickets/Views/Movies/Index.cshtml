@@ -29,23 +29,23 @@
                     <div class="col-md-6">
                         <div class="card-body">
                             <p class="card-text">@item.Description</p>
-                            <p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>
-                            <p class="card-text"><b>Category: </b>@item.MovieCategory</p>
-                            <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yy")</p>
-                            <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Кинотеатр: </b>@item.Cinema.Name</p>
+                            <p class="card-text"><b>Категория: </b>@item.MovieCategory</p>
+                            <p class="card-text"><b>Дата начала: </b>@item.StartDate.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Дата окончания: </b>@item.EndDate.ToString("dd MMM yy")</p>
                             <p class="card-text ">
-                                <b>Status: </b>
+                                <b>Статус: </b>
                                 @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
                                 {
-                                    <span class="badge bg-success text-white">AVAILABLE</span>
+                                    <span class="badge bg-success text-white">Доступный</span>
                                 }
                                 else if (DateTime.Now > item.EndDate)
                                 {
-                                    <span class="badge bg-danger text-white">EXPIRED</span>
+                                    <span class="badge bg-danger text-white">Истекший</span>
                                 }
                                 else
                                 {
-                                    <span class="badge bg-primary text-white">UPCOMING</span>
+                                    <span class="badge bg-primary text-white">Предстоящий</span>
                                 }
                             </p>
 
@@ -55,13 +55,13 @@
                         <div class="card-footer ">
                             <p class="card-text">
                                 <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.Id">
-                                    <i class="bi bi-eye-fill"></i> Show Details
+                                    <i class="bi bi-eye-fill"></i> Показать подробности
                                 </a>
                                 <a class="btn btn-success text-white @((DateTime.Now > item.EndDate) ? "disabled" : "")"
                                    asp-controller="Orders"
                                    asp-action="AddItemToShoppingCart"
                                    asp-route-id="@item.Id">
-                                    <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
+                                    <i class="bi bi-cart-plus"></i> Добавить в корзину (Price @item.Price.ToString("c"))
                                 </a>
                             </p>
                         </div>

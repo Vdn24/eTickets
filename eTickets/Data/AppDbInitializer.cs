@@ -26,33 +26,33 @@ namespace eTickets.Data
                     {
                         new Cinema()
                         {
-                            Name = "Cinema 1",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-1.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Кинотеатр Родина",
+                            Logo = "https://photos.wikimapia.org/p/00/03/36/69/38_full.jpg",
+                            Description = "Кинотеатр Родина Курск, ул.Менделеева, 31"
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 2",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-2.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Центр досуга «Спутник»",
+                            Logo = "https://avatars.mds.yandex.net/get-altay/2813737/2a0000017444e25daec380ffeb907ca5d31f/L_height",
+                            Description = "МБУК центр досуга Спутник, кинотеатр, Магистральный пр., 13Д, Курск"
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 3",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-3.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Кинотеатр Ассоль",
+                            Logo = "https://likengo.ru/media/place_cover/15/67/10736588395c668193aaa63.jpeg",
+                            Description = "Детский специализированный центр досуга г.Курск, ул.Малышева,2/23А"
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 4",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-4.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Люксор",
+                            Logo = "https://www.luxorfilm.ru/storage/rIXv9tbCiKlTPKMHqqst8KU0IhVElodJM3ueRCPD.jpeg",
+                            Description = "Студенческая ул.,1, микрорайон Северо-ЗападныйТРЦ Европа, этаж 3"
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 5",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-5.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "ГриннФильм",
+                            Logo = "https://kinocomfort.ru/upload/iblock/c40/c40aa464939cc075d664f00e2a334aed.jpg",
+                            Description = "ГриннФильм, кинотеатр, ул. Карла Маркса, 68, Курск"
                         },
                     });
                     context.SaveChanges();
