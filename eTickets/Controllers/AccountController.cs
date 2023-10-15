@@ -52,11 +52,11 @@ namespace eTickets.Controllers
                         return RedirectToAction("Index", "Movies");
                     }
                 }
-                TempData["Error"] = "Wrong credentials. Please, try again!";
+                TempData["Error"] = "Неверные учетные данные. Пожалуйста, попробуйте еще раз!";
                 return View(loginVM);
             }
 
-            TempData["Error"] = "Wrong credentials. Please, try again!";
+            TempData["Error"] = "Неверные учетные данные. Пожалуйста, попробуйте еще раз!";
             return View(loginVM);
         }
 
@@ -71,7 +71,7 @@ namespace eTickets.Controllers
             var user = await _userManager.FindByEmailAsync(registerVM.EmailAddress);
             if (user != null)
             {
-                TempData["Error"] = "This email address is already in use";
+                TempData["Error"] = "Этот адрес электронной почты уже используется";
                 return View(registerVM);
             }
 
